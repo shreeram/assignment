@@ -1,25 +1,60 @@
 /* app css stylesheet */
 
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+body{
+  padding: 16px;
+  background: #EFEFEF;
 }
 
-.menu:before {
-  content: "[";
+.container{
+  display: flex;
 }
 
-.menu:after {
-  content: "]";
+.image-div{
+  justify-content: space-between;
+  align-items: center;
+  background: #FFF;
+}
+.image-div img{
+  height: 200px;
 }
 
-.menu > li {
-  display: inline;
+.image-div div{
+
+}
+.column{
+  flex-direction: column;
 }
 
-.menu > li + li:before {
-  content: "|";
-  padding-right: 0.3em;
+.clear-button
+{
+  align-items: flex-end;
+}
+
+.content{
+  justify-content: space-around;
+  flex-basis: 100%;
+}
+
+.padding-top-8{
+  padding-top: 8px;
+}
+.padding-right-8{
+  padding-right: 8px;
+}
+
+.item
+{
+  width: 40px;
+  height: 40px;
+  border: 1px solid grey;
+  background-color: white;
+}
+
+.selected{
+  background-color: black;
+  opacity: 0.5;
+}
+
+.button{
+  align-items: center;
 }
