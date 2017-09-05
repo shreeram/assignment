@@ -9,8 +9,8 @@ angular.module('myApp.view1', ['ngRoute'])
     });
   }])
   .controller('View1Ctrl', ['$scope', function($scope) {
-    $scope.column = 8;
-    $scope.row = 6;
+    $scope.column = 9;
+    $scope.row = 7;
 
     $scope.getNumber = function(number)
     {
@@ -18,11 +18,11 @@ angular.module('myApp.view1', ['ngRoute'])
     };
     $scope.clear = function(array)
     {
-      for(var i=0;i<$scope.column;i++)
+      for(var i=0;i<=$scope.column;i++)
       {
         // initialize empty array
         array[i] = [];
-        for(var j=0;j<$scope.row;j++)
+        for(var j=0;j<=$scope.row;j++)
         {
           array[i][j] =false;
         }
@@ -37,8 +37,8 @@ angular.module('myApp.view1', ['ngRoute'])
     $scope.nextGeneration = function(input, M, N) {
 
       // to use for loop for finding neighbours index start from 1 to lenght -1
-      for (var l = 1; l < M - 1; l++) {
-        for (var m = 1; m < N - 1; m++) {
+      for (var l = 1; l <= M - 1; l++) {
+        for (var m = 1; m <= N - 1; m++) {
 
           // finding the live 8 neighbours
           var aliveNItems = 0;
