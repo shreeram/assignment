@@ -6,12 +6,13 @@
 <div class="container content">
   <div class="container">
     <div class="container">
-      <div ng-repeat="x in getNumber(column) track by $index">
-        <div ng-repeat="y in getNumber(row) track by $index">
-          <div class="item"
+      <div ng-repeat="x in getNumber(column+1) track by $index">
+        <div ng-repeat="y in getNumber(row+1) track by $index">
+          <div class="item" ng-show="$parent.$index !== 0 && $index !== 0"
           ng-class="{'selected': input[$parent.$index][$index]}"
           ng-click="toggleCell($parent.$index, $index)">
           </div>
+          <div ng-show="$parent.$index === 0 || $index === 0"/>
         </div>
       </div>
     </div>
@@ -24,12 +25,16 @@
 
   <div class="container">
     <div class="container">
-      <div ng-repeat="x in getNumber(column) track by $index">
-        <div ng-repeat="y in getNumber(row) track by $index">
-          <div class="item" ng-class="{'selected': output[$parent.$index][$index]}">
+      <div ng-repeat="x in getNumber(column+1) track by $index">
+        <div ng-repeat="y in getNumber(row+1) track by $index">
+          <div class="item" ng-show="$parent.$index !== 0 && $index !== 0"
+          ng-class="{'selected': output[$parent.$index][$index]}"
+          ng-click="toggleCell($parent.$index, $index)">
           </div>
+          <div ng-show="$parent.$index === 0 || $index === 0"/>
         </div>
       </div>
+    </div>
     </div>
     <div class="clear-button"><input type="button" ng-click="clear(input)" value="clear" /></div>
   </div>
